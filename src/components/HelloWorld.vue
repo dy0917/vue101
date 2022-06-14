@@ -26,10 +26,16 @@ export default {
       amount: 0,
     };
   },
+  mounted() {
+    console.log("mounted");
+  },
   methods: {
     increase() {
       this.amount++;
     },
+  },
+  unmounted() {
+    console.log("unmount");
   },
 };
 </script>
