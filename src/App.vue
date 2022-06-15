@@ -1,14 +1,14 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 101" />
+  <Form msg="Hello Vue 3 203 form" />
 </template>
 
 <script>
-import HelloWorldVue from "./components/HelloWorld.vue";
+import Form from "./components/Form.vue";
 export default {
   name: "App",
   components: {
-    HelloWorld: HelloWorldVue,
+    Form: Form,
   },
 };
 </script>
