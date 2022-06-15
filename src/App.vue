@@ -1,14 +1,35 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 101" />
+  <table>
+    <th>id</th>
+    <th>user id</th>
+    <th>title</th>
+    <th>body</th>
+    <tr v-for="article in getArticles()" :key="article.id">
+      <td>{{ article.id }}</td>
+      <td>{{ article.user_id }}</td>
+      <td>{{ article.title }}</td>
+      <td>{{ article.body }}</td>
+    </tr>
+  </table>
 </template>
 
 <script>
-import HelloWorldVue from "./components/HelloWorld.vue";
+import { ArticleStore } from "./store";
 export default {
   name: "App",
-  components: {
-    HelloWorld: HelloWorldVue,
+  setup() {
+    const { getArticles, loadArticles } = ArticleStore();
+
+    return {
+      getArticles,
+      loadArticles,
+    };
+
+    // ...
+  },
+  mounted() {
+    this.loadArticles();
   },
 };
 </script>
