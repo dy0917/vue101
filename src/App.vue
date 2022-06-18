@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 101" />
+  <HelloWorld msg="Hello Vue 3 101" @someEvent="someEvent" />
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
   name: "App",
   components: {
     HelloWorld: HelloWorldVue,
+  },
+  methods: {
+    someEvent(event) {
+      console.log("This event", event);
+    },
   },
 };
 </script>

@@ -32,6 +32,7 @@ export default {
   methods: {
     increase() {
       this.amount++;
+      this.$emit("some-event", this.amount);
     },
   },
   unmounted() {
